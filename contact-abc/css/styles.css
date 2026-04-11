@@ -1,94 +1,90 @@
 :root {
-    --grey-tone: #C1C4C8;
-    --orange-light: #EA580C;
-    --orange-main: #CB4E0B;
-    --orange-dark: #C2410C;
+    --light-orange-hs: #EA580C;
+    --orange: #CB4E0B;
+    --dark-orange: #C2410C;
+    --grey: #C1C4C8;
 }
 
-/* base */
 body {
-    background: #F2F6FA;
+    background-color: #F2F6FA;
     font-family: "Noto Sans Bhaiksuki", sans-serif;
 }
 
-/* main */
 .container {
-    width: 100%;
     max-width: 1700px;
     margin: 3rem auto;
-    padding: 2.5rem 1.5rem;
+    padding: 3rem 1rem;
 }
 
-/* heading */
 h2 {
     font-size: 1.75rem;
     font-weight: 700;
     line-height: 1.5;
-
-    border-left: 3px solid var(--orange-main);
-    border-bottom: 2px solid var(--orange-main);
-
-    padding-left: 0.4rem;
+    padding-left: 0.25rem;
     margin-bottom: 1.5rem;
 
-    display: inline-block;
+    width: max-content;
+
+    border-left: 0.3rem solid #CB4E0B;
+    border-bottom: 0.125rem solid #CB4E0B;
 }
 
-/* text */
 p {
     font-size: 1rem;
     margin-bottom: 2rem;
 }
 
-legend,
+legend {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
 label {
     font-size: 1rem;
 }
 
-legend {
-    margin-bottom: 1rem;
+
+form {
+    background-color: #ffffff;
+    padding: 2rem 1rem;
+    flex-grow: 999;
+    flex-basis: 0;
+    min-inline-size: 70%;
 }
 
-/* Form wrapper */
-form {
-    background: #ffffff;
-    min-width: 70%;
-    padding: 2rem;
-    flex-grow: 1;
-}
 
 fieldset {
-    border: 0;
-    margin: 0;
+    border: none;
     padding: 0;
+    margin: 0;
 }
 
-form label:not(
-    input[type="radio"] + label,
-    input[type="checkbox"] + label
-) {
-    display: block;
-    margin-bottom: 0.5rem;
-    line-height: 1.5;
-}
-
-form input:not(
-    [type="radio"],
+form input:not([type="radio"],
     [type="checkbox"],
-    [type="submit"]
-),
+    [type="submit"]),
 textarea {
+
     width: 100%;
-    padding: 0.6rem;
-    border: 1px solid var(--grey-tone);
+    padding: 0.5rem;
+    border: .0625rem solid #C1C4C8;
     border-radius: 0.5rem;
     margin-bottom: 2rem;
 }
 
-textarea {
+form textarea {
     min-height: 5rem;
     max-height: 16rem;
     resize: vertical;
+    height: auto;
+}
+
+
+form label:not(input[type="radio"] + label,
+    input[type="checkbox"] + label) {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
 }
 
 form fieldset div {
@@ -96,47 +92,62 @@ form fieldset div {
     flex-wrap: wrap;
     gap: 1rem;
 }
-
 form fieldset label {
-    padding: 1rem;
-    border-radius: 0.5rem;
-    border: 1px solid var(--grey-tone);
+    padding: 1.0625rem;
+    border: 1px solid #C1C4C8;
+    border-radius: .5rem;
+
     cursor: pointer;
+
     text-align: center;
     white-space: nowrap;
     flex-grow: 1;
-    flex-basis: calc((22rem - 100%) * 999);
-    min-inline-size: min(100%, 14rem);
+    flex-basis: calc((20rem - 100%) * 999);
+
+    min-inline-size: min(100%, 13.4162rem);
+    max-inline-size: 100%;
 }
 
-fieldset label span {
-    margin-right: 0.75rem;
+span {
+    margin-right: 1rem;
 }
 
 fieldset label:has(input[type="radio"]:checked) {
-    background: var(--orange-soft);
+    background-color: var(--light-orange-hs);
     color: #ffffff;
 }
 
+
 input[type="submit"] {
+
     width: 100%;
+
+    margin: 1rem 0;
     padding: 1rem;
+
     border: none;
-    border-radius: 0.5rem;
-    background: var(--orange-deep);
+    border-radius: .5rem;
+
+    background-color: var(--dark-orange);
     color: #ffffff;
+
     cursor: pointer;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 0.25s ease;
+
+    text-align: center;
+
+    transition: all 0.3s ease;
 }
 
 input[type="submit"]:hover {
-    background: var(--orange-soft);
+    background-color: var(--light-orange-hs);
 }
 
 /* 740px*/
+
 @media (min-width: 740px) {
 
     .inner-header-container {
@@ -147,34 +158,37 @@ input[type="submit"]:hover {
     img {
         width: 60%;
     }
+
 }
 
-/* 1200px */
+/* 1200px*/
+
 @media (min-width: 1200px) {
 
     .container {
         display: flex;
-        gap: 2rem;
+        gap: 2.5rem;
     }
 
     .inner-header-container {
         flex: 0 0 30%;
-        display: flex;
         flex-direction: column;
     }
 
     img {
         width: 100%;
     }
+
 }
 
 /* 1700px */
+
 @media (min-width: 1700px) {
 
     .container {
-        margin-inline: auto;
+        max-width: 90.375rem;
+        margin: 0 auto;
         padding: 3rem 0;
-        max-width: 90rem;
     }
 
 }
