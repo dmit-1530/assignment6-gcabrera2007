@@ -1,63 +1,67 @@
 :root {
-    --grey: #C1C4C8;
-    --light-orange: #EA580C;
-    --orange: #CB4E0B;
-    --dark-orange: #C2410C;
-   
+    --grey-tone: #C1C4C8;
+    --orange-light: #EA580C;
+    --orange-main: #CB4E0B;
+    --orange-dark: #C2410C;
 }
 
-
+/* base */
 body {
-    background-color: #F2F6FA;
+    background: #F2F6FA;
     font-family: "Noto Sans Bhaiksuki", sans-serif;
 }
 
+/* main */
 .container {
+    width: 100%;
     max-width: 1700px;
     margin: 3rem auto;
-    padding: 3rem 1rem;
+    padding: 2.5rem 1.5rem;
 }
 
-
+/* heading */
 h2 {
     font-size: 1.75rem;
     font-weight: 700;
     line-height: 1.5;
-    border-left: 0.1875rem solid var(--orange);
-    border-bottom: 0.125rem solid var(--orange);
-    padding-left: 0.25rem;
+
+    border-left: 3px solid var(--orange-main);
+    border-bottom: 2px solid var(--orange-main);
+
+    padding-left: 0.4rem;
     margin-bottom: 1.5rem;
-    width: max-content;
+
+    display: inline-block;
 }
 
+/* text */
 p {
     font-size: 1rem;
     margin-bottom: 2rem;
 }
 
-legend {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-}
-
+legend,
 label {
     font-size: 1rem;
 }
 
+legend {
+    margin-bottom: 1rem;
+}
+
+/* Form wrapper */
 form {
-    background-color: #ffffff;
+    background: #ffffff;
     min-width: 70%;
-    padding: 2rem 1rem;
+    padding: 2rem;
     flex-grow: 1;
- 
 }
 
 fieldset {
-    border: none;
+    border: 0;
     margin: 0;
     padding: 0;
 }
-
 
 form label:not(
     input[type="radio"] + label,
@@ -74,14 +78,10 @@ form input:not(
     [type="submit"]
 ),
 textarea {
-
     width: 100%;
-
-    padding: 0.5rem;
-
-    border: 0.0625rem solid var(--grey);
+    padding: 0.6rem;
+    border: 1px solid var(--grey-tone);
     border-radius: 0.5rem;
-
     margin-bottom: 2rem;
 }
 
@@ -98,49 +98,45 @@ form fieldset div {
 }
 
 form fieldset label {
-
     padding: 1rem;
     border-radius: 0.5rem;
-    border: 1px solid var(--grey);
+    border: 1px solid var(--grey-tone);
     cursor: pointer;
-    flex-grow: 1;
-    flex-basis: calc((20rem - 100%) * 999);
-    min-inline-size: min(100%, 13.5rem);
-    max-inline-size: 100%;
     text-align: center;
     white-space: nowrap;
+    flex-grow: 1;
+    flex-basis: calc((22rem - 100%) * 999);
+    min-inline-size: min(100%, 14rem);
 }
 
-
-
 fieldset label span {
-    margin-right: 1rem;
+    margin-right: 0.75rem;
 }
 
 fieldset label:has(input[type="radio"]:checked) {
-    background-color: var(--light-orange);
-    color: white;
+    background: var(--orange-soft);
+    color: #ffffff;
 }
-
 
 input[type="submit"] {
     width: 100%;
     padding: 1rem;
     border: none;
     border-radius: 0.5rem;
-    background-color: var(--dark-orange);
-    color: white;
+    background: var(--orange-deep);
+    color: #ffffff;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background 0.3s ease;
+    transition: background-color 0.25s ease;
 }
 
 input[type="submit"]:hover {
-    background-color: var(--light-orange);
+    background: var(--orange-soft);
 }
 
+/* 740px*/
 @media (min-width: 740px) {
 
     .inner-header-container {
@@ -153,12 +149,12 @@ input[type="submit"]:hover {
     }
 }
 
-
+/* 1200px */
 @media (min-width: 1200px) {
 
     .container {
         display: flex;
-        gap: 2.5rem;
+        gap: 2rem;
     }
 
     .inner-header-container {
@@ -170,16 +166,15 @@ input[type="submit"]:hover {
     img {
         width: 100%;
     }
-
 }
 
-
+/* 1700px */
 @media (min-width: 1700px) {
 
     .container {
         margin-inline: auto;
         padding: 3rem 0;
-        max-width: 90.375rem;
+        max-width: 90rem;
     }
 
 }
